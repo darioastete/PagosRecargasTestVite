@@ -8,7 +8,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: 'http://bun-burn-env.eba-ftyx2m3h.us-east-1.elasticbeanstalk.com',
-        secure: false,
+        secure: true,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
         headers: {
