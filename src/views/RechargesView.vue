@@ -1,10 +1,35 @@
 <template>
-  <div class="text-red-500">
-   intesas 
+  <div class="p-5">
+    <div class="px-4">
+      <h1 class="font-semibold text-lg text-slate-500">Saldo virtual</h1>
+      <p class="font-bold text-4xl">S/ 150.00</p>
+      <div class="p-1 rounded-2xl w-4/5 text-center border-solid border-2 border-gray-200 mt-2">
+        <span class="recharge-title text-slate-800">¿Cómo cargar mi saldo virtual?</span>
+      </div>
+      <p class="font-medium my-5 text-slate-600">Código para cargar tu saldo: <span class="text-cyan-500">{12345678901}</span></p>
+    </div>
+    <hr>
+    <CardServices v-for="(service, index) in servicesList" :key="index" v-bind:service="service"></CardServices>
   </div>
 </template>
 <script>
+import CardServices from '../components/CardServices.vue'
 export default {
-  name: 'RechargesView'
+  name: 'RechargesView',
+  components: {
+    CardServices
+  },
+  props: {
+    
+  },
+  data() {
+    return {
+      servicesList: [
+        {title: 'Recargas', destination: '/recharges-payments', icon:'https://cdn-icons-png.flaticon.com/256/5450/5450824.png'},
+        {title: 'Pago de servicios', destination: '/', icon:'https://cdn-icons-png.flaticon.com/256/5450/5450824.png'},
+        {title: 'Historial de ganancias y operaciones', destination: '/', icon:'https://cdn-icons-png.flaticon.com/256/5450/5450824.png'},
+      ]
+    }
+  },
 }
 </script>

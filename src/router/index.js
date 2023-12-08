@@ -3,11 +3,13 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [ 
    {
      path: '/',
-     component: ()=> import ('../views/RechargesView.vue')
+     component: ()=> import ('../views/RechargesView.vue'),
+     meta: { transition: 'slide-left' },
    },
    {
      path: '/recharges-payments',
-     component: () => import('../views/RechargesPayments.vue') 
+     component: () => import('../views/RechargesPayments.vue'),
+     meta: { transition: 'slide-right' },
    },
   // {
   //   path: '/404',

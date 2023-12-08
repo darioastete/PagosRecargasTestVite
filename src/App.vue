@@ -1,5 +1,6 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
+import Navbar from './components/Navbar.vue'
 </script>
 
 <template>
@@ -12,7 +13,12 @@ import HelloWorld from './components/HelloWorld.vue'
   <!--   </a> -->
   <!-- </div> -->
   <!-- <HelloWorld msg="Vite + Vue" /> -->
-  <router-view />
+  <Navbar></Navbar>
+  <router-view v-slot="{ Component, route }">
+    <transition :name="route.meta.transition || 'fade'">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <style scoped>
