@@ -2,7 +2,7 @@
   <div class="p-5">
     <div class="px-4">
       <h1 class="font-semibold text-lg text-slate-500">Saldo virtual</h1>
-      <p class="font-bold text-4xl">S/ 150.00</p>
+      <p class="font-bold text-4xl">S/ {{ balanceCommerce }} </p>
       <div class="p-1 rounded-2xl w-4/5 text-center border-solid border-2 border-gray-200 mt-2">
         <span class="recharge-title text-slate-800">¿Cómo cargar mi saldo virtual?</span>
       </div>
@@ -14,6 +14,8 @@
 </template>
 <script>
 import CardServices from '../components/CardServices.vue'
+import ApiService from '../services/ApiService.js'
+import { onMounted, ref } from 'vue';
 export default {
   name: 'RechargesView',
   components: {
@@ -28,8 +30,19 @@ export default {
         {title: 'Recargas', destination: '/recharges-payments', icon:'https://cdn-icons-png.flaticon.com/256/5450/5450824.png'},
         {title: 'Pago de servicios', destination: '/', icon:'https://cdn-icons-png.flaticon.com/256/5450/5450824.png'},
         {title: 'Historial de ganancias y operaciones', destination: '/', icon:'https://cdn-icons-png.flaticon.com/256/5450/5450824.png'},
-      ]
+      ],
     }
+  },
+  setup(){
+    let balanceCommerce = ref(0.00)
+    onMounted(async () => {
+      let apiService = new ApiService();
+      let response = await apiService.getActualBalance();
+      balanceCommerce.value = response;
+    })
+
+
+    return { balanceCommerce }
   },
 }
 </script>
