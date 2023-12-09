@@ -25,19 +25,19 @@ export default defineConfig({
     minify: true,
     sourceMap: false
   },
-  // server: {
-  //   proxy: {
-  //     '/api': {
-  //       target: 'http://bun-burn-env.eba-ftyx2m3h.us-east-1.elasticbeanstalk.com',
-  //       secure: true,
-  //       changeOrigin: true,
-  //       rewrite: (path) => path.replace(/^\/api/, ''),
-  //       headers: {
-  //         'Access-Control-Allow-Origin': '*',
-  //         'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT',
-  //         'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
-  //       },
-  //     },
-  //   }
-  // }
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://bun-burn-env.eba-ftyx2m3h.us-east-1.elasticbeanstalk.com',
+        // secure: true,
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT',
+          'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+        },
+      },
+    }
+  }
 })
