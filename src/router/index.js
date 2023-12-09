@@ -20,4 +20,10 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 })
+
+router.beforeEach((to, from) => {
+  let title = to.meta?.title ?? 'Default Title';
+  document.title = `${title} - Culqi`
+})
+
 export default router;

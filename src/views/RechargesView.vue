@@ -15,7 +15,8 @@
 <script>
 import CardServices from '../components/CardServices.vue'
 import ApiService from '../services/ApiService.js'
-import { onMounted, ref } from 'vue';
+import { onBeforeUnmount, onMounted, ref } from 'vue';
+import axios from 'axios';
 export default {
   name: 'RechargesView',
   components: {
@@ -35,10 +36,14 @@ export default {
   },
   setup(){
     let balanceCommerce = ref(0.00)
+    let cancelToken = ref(axios.CancelToken.source());
     onMounted(async () => {
       let apiService = new ApiService();
-      let response = await apiService.getActualBalance();
+      let response = await apiService.getActualBalance({cancelToken: cancelToken.value.token });
       balanceCommerce.value = response;
+    })
+    onBeforeUnmount(() => {
+      cancelToken.value.cancel('Componente desmontado');
     })
 
 

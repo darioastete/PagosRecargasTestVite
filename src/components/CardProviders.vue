@@ -27,8 +27,6 @@ export default {
   props: {
     providers: Array,
   },
-  setup(props) {
-  },
   data() {
     return {
       defaultImage: 'https://cdn-icons-png.flaticon.com/256/5450/5450824.png'

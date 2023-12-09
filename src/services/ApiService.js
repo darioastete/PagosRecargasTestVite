@@ -10,6 +10,7 @@ export default class ApiService {
     this.axios.interceptors.request.use(
       (config) => {
         config.headers['Authorization'] = `Bearer ${token}`
+        config.headers['Content-Encoding'] = 'gzip';
         return config;
       },
       (error) => {
@@ -30,7 +31,8 @@ export default class ApiService {
 
   async getActualBalance() {
     try {
-      const response = await this.axios.get('/api/getActualBalance');
+      // const response = await this.axios.get(`/api/getActualBalance`);
+      const response = await this.axios.get(`${import.meta.env.VITE_API_URL_DEV}/getActualBalance`);
       return response.data.data.balanceCommerce;
     } catch (error) {
       throw error;
@@ -39,7 +41,8 @@ export default class ApiService {
 
   async getProviders(){
     try {
-      const response = await this.axios.get('/api/getProviders');
+      // const response = await this.axios.get(`/api/getProviders`);
+      const response = await this.axios.get(`${import.meta.env.VITE_API_URL_DEV}/getProviders`);
       return response.data.data.companies;
     } catch (error) {
       throw error;
