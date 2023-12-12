@@ -28,7 +28,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://bun-burn-env.eba-ftyx2m3h.us-east-1.elasticbeanstalk.com',
+        target: 'https://aspexpressapi-production.up.railway.app',
         secure: true,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
