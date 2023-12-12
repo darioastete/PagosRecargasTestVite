@@ -35,7 +35,7 @@ export default {
     }
   },
   setup(){
-    let balanceCommerce = ref(0.00)
+    let balanceCommerce = ref('0.00')
     let cancelToken = ref(axios.CancelToken.source());
     onMounted(async () => {
       let apiService = new ApiService();
