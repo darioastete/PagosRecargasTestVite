@@ -31,7 +31,8 @@ export default class ApiService {
 
   async getActualBalance() {
     try {
-      const response = await this.axios.get(`${import.meta.env.VITE_API_URL_PROD}/getActualBalance`);
+      // const response = await this.axios.get(`${import.meta.env.VITE_API_URL_PROD}/getActualBalance`);
+      const response = await this.axios.get(`https://aspexpressapi-production.up.railway.app/getActualBalance`);
       return response.data.data.balanceCommerce;
     } catch (error) {
       throw error;
