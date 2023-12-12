@@ -1,7 +1,14 @@
-# Vue 3 + Vite
+# Proyecto de Migración a Aplicaciones Web: Recargas y Pagos de Servicios
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Este repositorio contiene el código fuente y los recursos para la migración de aplicaciones nativas de Android a aplicaciones web. El enfoque principal es aprovechar las capacidades web y reducir el tiempo de despliegue en entornos productivos en comparación con los despliegues tradicionales de APK o AAB.
 
-## Recommended IDE Setup
+## Objetivo del Proyecto
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+El objetivo principal es migrar la funcionalidad existente de Recargas y Pagos de Servicios a una aplicación web. Esto permitirá a los comercios asociados con Culqi realizar recargas o pagos de servicios, ganando una comisión por cada transacción a favor de sus clientes.
+
+## Contenido del Repositorio
+
+- **src/:** Código fuente de la aplicación web.
+- **assets/:** Recursos gráficos y visuales.
+- **docs/:** Documentación relacionada con el proyecto.
+- **README.md:** Información principal del repositorio.
