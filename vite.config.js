@@ -25,19 +25,4 @@ export default defineConfig({
     minify: true,
     sourceMap: false
   },
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://aspexpressapi-production.up.railway.app',
-        secure: true,
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT',
-          'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
-        },
-      },
-    }
-  }
 })
