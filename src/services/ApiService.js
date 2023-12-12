@@ -41,7 +41,7 @@ export default class ApiService {
 
   async getProviders(){
     try {
-      const response = await this.axios.get(`${import.meta.env.VITE_API_URL_PROD}/getProviders`);
+      const response = await this.axios.get(`https://aspexpressapi-production.up.railway.app/getProviders`);
       return response.data.data.companies;
     } catch (error) {
       throw error;
