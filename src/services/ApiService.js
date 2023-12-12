@@ -31,7 +31,6 @@ export default class ApiService {
 
   async getActualBalance() {
     try {
-      // const response = await this.axios.get(`/api/getActualBalance`);
       const response = await this.axios.get(`${import.meta.env.VITE_API_URL_PROD}/getActualBalance`);
       return response.data.data.balanceCommerce;
     } catch (error) {
@@ -41,7 +40,6 @@ export default class ApiService {
 
   async getProviders(){
     try {
-      // const response = await this.axios.get(`/api/getProviders`);
       const response = await this.axios.get(`${import.meta.env.VITE_API_URL_PROD}/getProviders`);
       return response.data.data.companies;
     } catch (error) {
